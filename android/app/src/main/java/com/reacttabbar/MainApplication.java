@@ -1,4 +1,4 @@
-package com.tabnavigator;
+package com.reacttabbar;
 
 import android.app.Application;
 

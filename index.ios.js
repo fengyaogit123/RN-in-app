@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class TabNavigator extends Component {
+export default class ReactTabBar extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TabNavigator', () => TabNavigator);
+AppRegistry.registerComponent('ReactTabBar', () => ReactTabBar);

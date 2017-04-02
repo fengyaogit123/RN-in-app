@@ -1,6 +1,7 @@
-package com.tabnavigator;
+package com.reacttabbar;
 
 import com.facebook.react.ReactActivity;
+import com.oblador.vectoricons.VectorIconsPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -10,6 +11,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "TabNavigator";
+        return "ReactTabBar";
     }
 }

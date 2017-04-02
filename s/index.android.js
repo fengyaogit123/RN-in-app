@@ -1,10 +1,21 @@
 
 import React, { Component } from 'react';
 import {AppRegistry,Text,Image,StyleSheet} from 'react-native';
-import Movie from './view/movie/index'
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/Ionicons';
 const TabNavigatorItem =TabNavigator.Item;
+/**
+ 参数说明
+ selected {boolean } 是否被选中
+ selectedTitleStyle{{}} 被选中时标题字体样式
+ title 字体内容 
+ titleStyle 字体样式 {style}
+ renderIcon 图标()=><Image /> or <Icon />
+ renderSelectedIcon 被选中时图标 ()=><Image /> or <Icon />
+ badgeText 角标内容
+ onPress  被选中时触发的函数
+ renderBadge 自定义角标()=>
+ */
 export default class App extends Component {
 
   constructor(props){
@@ -25,7 +36,7 @@ export default class App extends Component {
           renderIcon={() => <Icon name="ios-film-outline" size={28} color="#aaa" />}
           renderSelectedIcon={() =><Icon name="ios-film" size={28} color="#fff"/>}
           onPress={() => this.setState({ selectedTab: 'Home' })} >
-          <Movie/> 
+          <Text>电影</Text>
         </TabNavigatorItem>
         <TabNavigatorItem
           title="图书"

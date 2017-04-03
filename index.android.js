@@ -25,7 +25,7 @@ export default class App extends Component {
           renderIcon={() => <Icon name="ios-film-outline" size={28} color="#aaa" />}
           renderSelectedIcon={() =><Icon name="ios-film" size={28} color="#fff"/>}
           onPress={() => this.setState({ selectedTab: 'Home' })} >
-          <Movie/> 
+          <Movie /> 
         </TabNavigatorItem>
         <TabNavigatorItem
           title="图书"

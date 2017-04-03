@@ -1,12 +1,16 @@
 import React from 'react';
-import {View,Image,Text,StyleSheet} from 'react-native';
-
+import {View,Image,Text,StyleSheet,TouchableHighlight} from 'react-native';
+import {COLOR,TOUCH_COLOR} from '../../globa/colors';
 //子项
 export default  MovieItem = (props)=>(
-<View style={[style.itemBox,(props.horizontal?style.horizontal:style.noHorizontal)]} >
-        <Image style={style.itemImg} source={{uri:props.uri}} />
-        <Text numberOfLines={1} style={style.itemFont} >{props.title}</Text>
-    </View>
+    
+        <View style={[style.itemBox,(props.horizontal?style.horizontal:style.noHorizontal)]} >
+            <TouchableHighlight underlayColor={TOUCH_COLOR} onPress={props.onSelect} activeOpacity={0.9}>
+                <Image style={style.itemImg} source={{uri:props.uri}} />
+            </TouchableHighlight>
+            <Text numberOfLines={1} style={style.itemFont} >{props.title}</Text>
+        </View>
+    
 )
 
 const style = StyleSheet.create({

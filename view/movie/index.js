@@ -45,6 +45,7 @@ export default class Content extends Component{
                             <MovieItem 
                                 title={`${movie.title}${index}`} 
                                 uri={movie.images.large} key={index}
+                                onSelect={()=>alert(index)}
                             />   
                         ))}
                     </View>

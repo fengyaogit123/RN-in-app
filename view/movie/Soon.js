@@ -36,7 +36,9 @@ export default class Soon extends Component {
                     {this.state.dataSource.map((movie,index)=>(    
                             <MovieItem {...this.props}
                                 title={`${movie.title}`} 
-                                uri={movie.images.large} key={index}
+                                uri={movie.images.large} 
+                                key={index}
+                                onSelect={()=>alert(index)}
                             />   
                         ))}
                 </ScrollView>

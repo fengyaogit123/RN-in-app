@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
 import {AppRegistry,Text,Image,StyleSheet} from 'react-native';
-import Movie from './view/movie/index'
+import Movie from './view/movie';
+import Book from './view/book';
+import Person from './view/person';
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/Ionicons';
 const TabNavigatorItem =TabNavigator.Item;
@@ -35,7 +37,7 @@ export default class App extends Component {
           renderIcon={() => <Icon name="ios-book-outline" size={28} color="#aaa" />}
           renderSelectedIcon={() =><Icon name="ios-book" size={28} color="#fff" />}
           onPress={() => this.setState({ selectedTab: 'work' })}>
-          <Text>图书</Text>
+          <Book />
         </TabNavigatorItem>
         <TabNavigatorItem
           title="个人中心"
@@ -45,7 +47,7 @@ export default class App extends Component {
           renderIcon={() => <Icon name="ios-person-outline" size={28} color="#aaa"/>}
           renderSelectedIcon={() =><Icon name="ios-person" size={28} color="#fff" />}
           onPress={() => this.setState({ selectedTab: 'person' })}>
-          <Text>个人中心</Text>
+          <Person />
         </TabNavigatorItem>
       </TabNavigator>
     );

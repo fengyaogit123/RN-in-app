@@ -33,6 +33,7 @@ export default class Content extends Component{
     }
 
     render(){
+        const { navigate } = this.props.navigation; 
         return(
             <View style={{flex:1}}>
                 <Header onSearch={(text)=>{ alert(text) }} />
@@ -43,9 +44,9 @@ export default class Content extends Component{
                     <View style={style.contain}>
                         {this.state.dataSource.map((movie,index)=>(
                             <MovieItem 
-                                title={`${movie.title}${index}`} 
+                                title={movie.title} 
                                 uri={movie.images.large} key={index}
-                                onSelect={()=>alert(index)}
+                                onSelect={()=>navigate('MovieDet', { movieId: "123",mode:true })}
                             />   
                         ))}
                     </View>

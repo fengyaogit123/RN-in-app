@@ -10,9 +10,12 @@ export default class Soon extends Component {
         this.state = {
             dataSource: []
         };
-        this.getSoon();
+        
     }
 
+    componentWillMount(){
+        this.getSoon();
+    }
     getSoon(){
         fetch(Inface.COMING_SOON,{
             method:"GET"

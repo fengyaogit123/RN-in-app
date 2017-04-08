@@ -4,9 +4,9 @@ import {COLOR,TOUCH_COLOR} from '../../globa/colors';
 //子项
 export default  MovieItem = (props)=>(
     
-        <View style={[style.itemBox,(props.horizontal?style.horizontal:style.noHorizontal)]} >
+        <View style={[style.itemBox,(props.horizontal?style.horizontal:style.noHorizontal),(props.boxStyle?props.boxStyle:{})]} >
             <TouchableHighlight underlayColor={TOUCH_COLOR} onPress={props.onSelect} activeOpacity={0.9}>
-                <Image style={style.itemImg} source={{uri:props.uri}} />
+                <Image style={[style.itemImg,(props.imgStyle?props.imgStyle:{})]} source={{uri:props.uri}} />
             </TouchableHighlight>
             <Text numberOfLines={1} style={style.itemFont} >{props.title}</Text>
         </View>
@@ -14,9 +14,8 @@ export default  MovieItem = (props)=>(
 )
 
 const style = StyleSheet.create({
-     itemBox:{
+    itemBox:{
         paddingTop:10,
-        height:180,
         marginBottom:20
     },
     noHorizontal:{

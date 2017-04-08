@@ -12,7 +12,11 @@ export default class Content extends Component{
         dataSource:[],
         isrefreshing:false
         };
+        
+    }
+    componentWillMount(){
         this.getMovies();
+        
     }
     //获取数据
     getMovies(){
@@ -41,11 +45,13 @@ export default class Content extends Component{
                 style={{backgroundColor:"#fff"}} >
                     <Soon horizontal={true} />
                     <Title label="即将上映" />
-                    <View style={style.contain}>
+                    <View style={[style.contain,{flexWrap:"wrap"}]}>
                         {this.state.dataSource.map((movie,index)=>(
                             <MovieItem 
                                 title={movie.title} 
-                                uri={movie.images.large} key={index}
+                                uri={movie.images.large}
+                                boxStyle={{height:200}} 
+                                key={index}
                                 onSelect={()=>navigate('MovieDet', { movieId: "123",mode:true })}
                             />   
                         ))}
@@ -57,11 +63,9 @@ export default class Content extends Component{
 }
 const style = StyleSheet.create({
     contain:{
-        width:"100%",
-        justifyContent:"space-around",
+        flex:1,
         flexDirection:"row",
         flexWrap:"wrap",
-        justifyContent:"flex-start",
         backgroundColor:"#fff"
     },
 });

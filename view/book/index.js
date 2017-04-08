@@ -14,6 +14,9 @@ export default class Book extends Component {
         this.state = {
             dataSource: []
         };
+        
+    }
+    componentWillMount(){
         this.getBook();
     }
     getBook(){

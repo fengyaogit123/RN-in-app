@@ -52,7 +52,7 @@ export default class Content extends Component{
                                 uri={movie.images.large}
                                 boxStyle={{height:200}} 
                                 key={index}
-                                onSelect={()=>navigate('MovieDet', { movieId: "123",mode:true })}
+                                onSelect={()=>navigate('MovieDet', { movieId: movie.id,title:movie.title,mode:true })}
                             />   
                         ))}
                     </View>
